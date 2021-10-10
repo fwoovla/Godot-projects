@@ -1,0 +1,153 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Add_trike_panel.gd" type="Script" id=1]
+[ext_resource path="res://assets/font_60.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.176471, 0.152941, 0.294118, 1 )
+
+[node name="Add_trike_panel" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = 69.4636
+margin_top = 105.03
+margin_right = 636.464
+margin_bottom = 459.03
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -68.0
+margin_top = -108.0
+margin_right = 78.0
+margin_bottom = 824.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Edit" type="Control" parent="Control"]
+margin_left = 224.138
+margin_top = 86.9397
+margin_right = 264.138
+margin_bottom = 126.94
+
+[node name="make" type="LineEdit" parent="Control/Edit"]
+margin_left = -40.0
+margin_top = -73.2599
+margin_right = 360.0
+margin_bottom = 7.74005
+custom_fonts/font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="model" type="LineEdit" parent="Control/Edit"]
+margin_left = -40.0
+margin_top = 12.9965
+margin_right = 360.0
+margin_bottom = 93.9965
+custom_fonts/font = ExtResource( 2 )
+
+[node name="serial" type="LineEdit" parent="Control/Edit"]
+margin_left = -40.0
+margin_top = 98.733
+margin_right = 360.0
+margin_bottom = 179.733
+custom_fonts/font = ExtResource( 2 )
+
+[node name="color" type="LineEdit" parent="Control/Edit"]
+margin_left = -40.0
+margin_top = 186.926
+margin_right = 360.0
+margin_bottom = 267.926
+custom_fonts/font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="type" type="LineEdit" parent="Control/Edit"]
+margin_left = -40.0
+margin_top = 276.0
+margin_right = 360.0
+margin_bottom = 357.0
+custom_fonts/font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Labels" type="Control" parent="Control"]
+margin_left = 170.26
+margin_top = 90.3071
+margin_right = 210.26
+margin_bottom = 130.307
+
+[node name="make" type="Label" parent="Control/Labels"]
+margin_left = -160.0
+margin_top = -72.6652
+margin_right = 240.0
+margin_bottom = -1.66516
+custom_fonts/font = ExtResource( 2 )
+text = "Make"
+
+[node name="model" type="Label" parent="Control/Labels"]
+margin_left = -160.0
+margin_top = 15.0316
+margin_right = 7.0
+margin_bottom = 86.0316
+custom_fonts/font = ExtResource( 2 )
+text = "Model"
+
+[node name="serial" type="Label" parent="Control/Labels"]
+margin_left = -160.0
+margin_top = 106.737
+margin_right = 240.0
+margin_bottom = 177.737
+custom_fonts/font = ExtResource( 2 )
+text = "Serial"
+
+[node name="color" type="Label" parent="Control/Labels"]
+margin_left = -160.0
+margin_top = 191.099
+margin_right = 240.0
+margin_bottom = 262.099
+custom_fonts/font = ExtResource( 2 )
+text = "Color"
+
+[node name="type" type="Label" parent="Control/Labels"]
+margin_left = -160.0
+margin_top = 275.461
+margin_right = 240.0
+margin_bottom = 346.461
+custom_fonts/font = ExtResource( 2 )
+text = "Type"
+
+[node name="Cancel_button" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -143.378
+margin_top = 638.873
+margin_right = 70.6216
+margin_bottom = 811.873
+custom_fonts/font = ExtResource( 2 )
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add_button" type="Button" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -64.2172
+margin_top = 647.796
+margin_right = 301.783
+margin_bottom = 815.796
+custom_fonts/font = ExtResource( 2 )
+text = "Save Trike"
+
+[connection signal="visibility_changed" from="." to="." method="_on_Add_trike_panel_visibility_changed"]
+[connection signal="pressed" from="Control/Cancel_button" to="." method="_on_Cancel_button_pressed"]
+[connection signal="pressed" from="Control/Add_button" to="." method="_on_Add_button_pressed"]

@@ -1,0 +1,258 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/Rider_main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Add_trike_panel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/font_60.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/font_30.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/Roboto-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://scenes/Events_panel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Trike_info_panel.tscn" type="PackedScene" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0784314, 0.215686, 0.352941, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 2
+outline_color = Color( 0.141176, 0.180392, 0.254902, 1 )
+font_data = ExtResource( 5 )
+
+[node name="Rider_main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 718.0
+margin_bottom = 1284.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Basic_info" type="Panel" parent="Control"]
+margin_left = 3.0
+margin_top = 245.0
+margin_right = 716.0
+margin_bottom = 436.0
+
+[node name="name" type="Label" parent="Control/Basic_info"]
+margin_left = 12.4054
+margin_top = 13.1892
+margin_right = 91.4054
+margin_bottom = 49.1892
+custom_fonts/font = ExtResource( 4 )
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name_edit" type="LineEdit" parent="Control/Basic_info"]
+margin_left = 145.0
+margin_top = 8.43237
+margin_right = 545.0
+margin_bottom = 54.4324
+custom_fonts/font = ExtResource( 4 )
+editable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="phone" type="Label" parent="Control/Basic_info"]
+margin_left = 10.6216
+margin_top = 55.7028
+margin_right = 96.6216
+margin_bottom = 91.7028
+custom_fonts/font = ExtResource( 4 )
+text = "Phone"
+
+[node name="phone_edit" type="LineEdit" parent="Control/Basic_info"]
+margin_left = 145.0
+margin_top = 53.3244
+margin_right = 545.0
+margin_bottom = 99.3244
+custom_fonts/font = ExtResource( 4 )
+
+[node name="email" type="Label" parent="Control/Basic_info"]
+margin_left = 13.0
+margin_top = 95.8111
+margin_right = 86.0
+margin_bottom = 131.811
+custom_fonts/font = ExtResource( 4 )
+text = "Email"
+
+[node name="email_edit" type="LineEdit" parent="Control/Basic_info"]
+margin_left = 145.0
+margin_top = 95.8111
+margin_right = 545.0
+margin_bottom = 141.811
+custom_fonts/font = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="address" type="Label" parent="Control/Basic_info"]
+margin_left = 11.8108
+margin_top = 142.109
+margin_right = 121.811
+margin_bottom = 178.109
+custom_fonts/font = ExtResource( 4 )
+text = "Address"
+
+[node name="address_edit" type="LineEdit" parent="Control/Basic_info"]
+margin_left = 145.0
+margin_top = 138.541
+margin_right = 545.0
+margin_bottom = 184.541
+custom_fonts/font = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Update_button" type="Button" parent="Control/Basic_info"]
+margin_left = 584.868
+margin_top = 59.9626
+margin_right = 691.868
+margin_bottom = 115.963
+custom_fonts/font = ExtResource( 4 )
+disabled = true
+text = "Update"
+
+[node name="Label" type="Label" parent="Control/Basic_info"]
+margin_left = 195.568
+margin_top = -83.3298
+margin_right = 461.568
+margin_bottom = -12.3298
+custom_fonts/font = ExtResource( 3 )
+text = "Basic Info"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add_trike_button" type="Button" parent="Control"]
+margin_left = 260.0
+margin_top = 565.0
+margin_right = 460.0
+margin_bottom = 710.0
+custom_fonts/font = ExtResource( 4 )
+text = "Add Trike"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Remove_trike_button" type="Button" parent="Control"]
+margin_left = 500.0
+margin_top = 565.0
+margin_right = 700.0
+margin_bottom = 710.0
+custom_fonts/font = ExtResource( 4 )
+text = "Remove Trike"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trike_control" type="Control" parent="Control"]
+margin_left = 97.6263
+margin_top = 526.612
+margin_right = 137.626
+margin_bottom = 566.612
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Trike_control"]
+margin_left = 82.6381
+margin_top = -55.092
+margin_right = 458.638
+margin_bottom = 15.908
+custom_fonts/font = ExtResource( 3 )
+text = "Current Trikes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trike_list" type="ItemList" parent="Control/Trike_control"]
+margin_left = -95.0
+margin_top = 42.0
+margin_right = 107.0
+margin_bottom = 298.0
+custom_fonts/font = ExtResource( 4 )
+
+[node name="Logout_button" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -169.0
+margin_top = -66.0
+custom_fonts/font = SubResource( 2 )
+text = "Logout"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Events_button" type="Button" parent="Control"]
+margin_left = 198.002
+margin_top = 903.594
+margin_right = 536.002
+margin_bottom = 1106.6
+custom_fonts/font = ExtResource( 3 )
+text = "View Events"
+
+[node name="View_trike_button" type="Button" parent="Control"]
+margin_left = 260.0
+margin_top = 720.0
+margin_right = 460.0
+margin_bottom = 865.0
+custom_fonts/font = ExtResource( 4 )
+text = "View Trike"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Refresh_button" type="Button" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -77.0
+margin_right = 218.0
+custom_fonts/font = ExtResource( 3 )
+text = "Refresh"
+
+[node name="Title" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -59.0
+margin_right = 59.0
+margin_bottom = 71.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 3 )
+text = "Title"
+align = 1
+
+[node name="Add_trike_panel" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="Events_panel" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="Trike_info_panel" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[connection signal="text_changed" from="Control/Basic_info/name_edit" to="." method="basic_edit_text_changed"]
+[connection signal="text_changed" from="Control/Basic_info/phone_edit" to="." method="basic_edit_text_changed"]
+[connection signal="text_changed" from="Control/Basic_info/email_edit" to="." method="basic_edit_text_changed"]
+[connection signal="text_changed" from="Control/Basic_info/address_edit" to="." method="basic_edit_text_changed"]
+[connection signal="pressed" from="Control/Basic_info/Update_button" to="." method="_on_Update_button_pressed"]
+[connection signal="pressed" from="Control/Add_trike_button" to="." method="_on_Add_trike_button_pressed"]
+[connection signal="pressed" from="Control/Remove_trike_button" to="." method="_on_Remove_trike_button_pressed"]
+[connection signal="item_selected" from="Control/Trike_control/Trike_list" to="." method="_on_Trike_list_item_selected"]
+[connection signal="pressed" from="Control/Logout_button" to="." method="_on_Logout_button_pressed"]
+[connection signal="pressed" from="Control/Events_button" to="." method="_on_Events_button_pressed"]
+[connection signal="pressed" from="Control/View_trike_button" to="." method="_on_View_trike_button_pressed"]
+[connection signal="pressed" from="Control/Refresh_button" to="." method="_on_Refresh_button_pressed"]

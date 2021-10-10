@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Http.gd" type="Script" id=1]
+
+[node name="Http" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Event_request" type="HTTPRequest" parent="."]
+
+[node name="Rider_request" type="HTTPRequest" parent="."]
+
+[node name="Auth_request" type="HTTPRequest" parent="."]
+
+[node name="Request_timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="request_completed" from="Event_request" to="." method="_on_Event_request_request_completed"]
+[connection signal="request_completed" from="Rider_request" to="." method="_on_Rider_request_request_completed"]
+[connection signal="request_completed" from="Auth_request" to="." method="_on_Auth_request_request_completed"]
+[connection signal="timeout" from="Request_timer" to="." method="_on_Request_timer_timeout"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Available_events_panel.gd" type="Script" id=1]
+[ext_resource path="res://assets/font_60.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.101961, 0.321569, 0.482353, 1 )
+
+[node name="Available_events_panel" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 720.0
+margin_bottom = 1280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="Control"]
+margin_left = -2.37842
+margin_top = 252.112
+margin_right = 717.622
+margin_bottom = 853.112
+custom_fonts/font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mark_button" type="Button" parent="Control"]
+margin_left = 110.887
+margin_top = 863.364
+margin_right = 621.887
+margin_bottom = 940.364
+custom_fonts/font = ExtResource( 2 )
+text = "Mark as Interested"
+
+[node name="Back_button" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -143.0
+margin_top = -77.0
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -219.5
+margin_right = 219.5
+margin_bottom = 71.0
+custom_fonts/font = ExtResource( 2 )
+text = "Available Events"
+
+[connection signal="visibility_changed" from="." to="." method="_on_Available_events_panel_visibility_changed"]
+[connection signal="item_selected" from="Control/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="pressed" from="Control/Mark_button" to="." method="_on_Mark_button_pressed"]
+[connection signal="pressed" from="Control/Back_button" to="." method="_on_Back_button_pressed"]

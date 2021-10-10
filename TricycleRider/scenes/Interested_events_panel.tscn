@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/font_60.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/Interested_events_panel.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.109804, 0.278431, 0.235294, 1 )
+
+[node name="Interested_events_panel" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 719.0
+margin_bottom = 1278.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="ItemList" type="ItemList" parent="Control"]
+margin_left = 2.82849
+margin_top = 316.784
+margin_right = 710.828
+margin_bottom = 809.784
+custom_fonts/font = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -234.0
+margin_right = 234.0
+margin_bottom = 71.0
+custom_fonts/font = ExtResource( 1 )
+text = "Events of Interest"
+
+[node name="Back_buttton" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -150.551
+margin_top = -152.51
+margin_right = -7.55103
+margin_bottom = -75.5098
+custom_fonts/font = ExtResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="visibility_changed" from="." to="." method="_on_Interested_events_panel_visibility_changed"]
+[connection signal="pressed" from="Control/Back_buttton" to="." method="_on_Back_buttton_pressed"]
